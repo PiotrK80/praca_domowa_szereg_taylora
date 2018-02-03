@@ -1,0 +1,1 @@
+# praca_domowa_szereg_taylora
