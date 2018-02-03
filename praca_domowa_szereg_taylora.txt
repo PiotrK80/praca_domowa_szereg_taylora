@@ -1,0 +1,40 @@
+#include <cstdlib>
+#include <iostream>
+#define PI 3.14
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+double x;
+double dokladnosc;
+
+cout << "Podaj kat";
+cin >> x;
+
+cout << "Podaj dokladnosc";
+cin >> dokladnosc;
+
+while( x/360>1 ) x-=360;
+x = x * (PI/180);
+
+double w=0;
+double s=x;
+double p=x;
+double n=1;
+while( ((w-s) > dokladnosc) || ((w-s) < -dokladnosc) )
+{
+w = s;
+n+=2;
+p = (p*x*x) / ((n-1)*(n));
+s = w-p;
+n+=2;
+p = (p*x*x) / ((n-1)*(n));
+s = s+p;
+}
+
+cout << s << "\n";
+
+system("PAUSE");
+return EXIT_SUCCESS;
+} 
